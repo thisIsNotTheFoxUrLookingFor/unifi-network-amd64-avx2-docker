@@ -1,0 +1,17 @@
+services:
+  unifi-network-amd64-avx2:
+    container_name: farfoxachedocker.unifi-network-amd64-avx2
+    image: unifi-network-amd64-avx2:latest
+    build:
+      context: .
+      network: host
+      dockerfile: ./Dockerfile
+    volumes:
+      - var-lib-unifi:/var/lib/unifi
+      - usr-lib-unifi:/usr/lib/unifi
+    network_mode: host
+    restart: unless-stopped
+
+volumes:
+  var-lib-unifi:
+  usr-lib-unifi:
