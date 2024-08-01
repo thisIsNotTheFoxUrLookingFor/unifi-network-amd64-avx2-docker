@@ -6,6 +6,8 @@ services:
       context: .
       network: host
       dockerfile: ./Dockerfile
+    devices:
+      - /dev/log:/dev/log
     volumes:
       - var-lib-unifi:/var/lib/unifi
       - usr-lib-unifi:/usr/lib/unifi
